@@ -150,15 +150,15 @@
   <!-- Include scripts -->
 
   <script>
-    window.onload = function() {
-      var minHeight = window.innerHeight * 5; // Get the screen height
-      var infoSections = document.querySelectorAll('infoSection'); // Select all elements with class .infoSection
+  window.onload = function() {
+    var minHeight = window.innerHeight * 5; // Set the minimum height to half of the screen height
+    var infoSections = document.querySelectorAll('.infoSection'); // Add a dot before the class name
 
-      infoSections.forEach(function(infoSection) {
-        infoSection.style.minHeight = minHeight; // Set the minimum height of each .infoSection element
-      });
-    };
-  </script>
+    infoSections.forEach(function(infoSection) {
+      infoSection.style.minHeight = minHeight + 'px'; // Set the minimum height of each .infoSection element with 'px'
+    });
+  };
+</script>
 
   </body>
 </html>
