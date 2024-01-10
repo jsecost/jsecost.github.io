@@ -151,11 +151,17 @@
 
   <script>
   window.onload = function() {
-    var minHeight = window.innerHeight / 2; // Set the minimum height to half of the screen height
-    var infoSections = document.querySelectorAll('.infoSection'); // Add a dot before the class name
+    var minHeightInfo = window.innerHeight / 2; 
+    var maxHeightContent = window.innerHeight / 3; 
 
+    var infoSections = document.querySelectorAll('.infoSection');
+    var contentSections = document.querySelectorAll('.content');
+    
     infoSections.forEach(function(infoSection) {
-      infoSection.style.minHeight = minHeight + 'px'; // Set the minimum height of each .infoSection element with 'px'
+      infoSection.style.minHeight = minHeightInfo + 'px'; // Set the minimum height of each .infoSection element with 'px'
+    });
+    contentSections.forEach(function(contentSection) {
+      contentSection.style.maxHeight = maxHeightContent + 'px'; // Set the maximum height of each .content element with 'px'
     });
   };
 </script>
