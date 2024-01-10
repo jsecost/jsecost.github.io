@@ -149,5 +149,16 @@
 
   <!-- Include scripts -->
 
+  <script>
+    window.onload = function() {
+      var minHeight = window.innerHeight / 2; // Get the screen height
+      var infoSections = document.querySelectorAll('.infoSection'); // Select all elements with class .infoSection
+
+      infoSections.forEach(function(infoSection) {
+        infoSection.style.minHeight = minHeight; // Set the minimum height of each .infoSection element
+      });
+    };
+  </script>
+
   </body>
 </html>
