@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Swim Lessons - AquaSafe Swimming Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== PAGE-SPECIFIC STYLES FOR SWIM LESSONS PAGE ===== */
+
+        /* Main Content Layout - Specific to Lessons page */
+        .main-content {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        /* Lesson Cards Grid - Specific to Lessons page */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        .lesson-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintains aspect ratio while filling the space */
+            object-position: center; /* Centers the image if cropping is needed */
+            display: block;
+        }
+
+        .lesson-card {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lesson-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #4AAFBF, #6BB6FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-style: italic;
+            position: relative;
+        }
+
+        .lesson-content {
+            padding: 30px;
+        }
+
+        .lesson-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 300;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .lesson-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .lesson-btn {
+            background: #4AAFBF;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 14px;
+            font-weight: 300;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .lesson-btn:hover {
+            background: #3A9FAF;
+        }
+
+        /* Adult Lessons Section - Specific to Lessons page */
+        .adult-lessons {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .adult-lessons h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 200;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .adult-lessons p {
+            color: #666;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        /* Contact CTA Section - Specific to Lessons page */
+        .contact-cta {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cta-text {
+            flex: 1;
+        }
+
+        .cta-text h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .cta-text p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .cta-button {
+            flex-shrink: 0;
+            margin-left: 40px;
+        }
+
+        .cta-btn {
+            background: #67cff6;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            background: #67cff6;
+        }
+
+        /* Why Choose Section Override for Lessons page */
+        .why-choose {
+            background: #67cff6;
+            color: white;
+            padding: 60px 0 10px 0;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+
+        /* Features Section Override for Lessons page */
+        .features-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        /* Lessons Page Responsive */
+        @media (max-width: 768px) {
+            .lessons-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .cta-button {
+                margin-left: 0;
+            }
+
+            .adult-lessons h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lesson-content {
+                padding: 20px;
+            }
+
+            .lesson-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/aquasafe_logo.svg" alt="AquaSafe Swimming Lessons" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="lessons.html" class="active">Our Swim Lessons</a></li>
+                    <li><a href="locations.html">Our Locations</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Our Swim Lessons</h1>
+            <div class="breadcrumb">
+                You are here: <a href="index.html">Home</a> - Our Swim Lessons
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-image">
+                        <!-- This place requires an image of private swim lesson -->
+                        <img src="assets/lesson_img_1.jpg" alt="Private Swimming Lesson">
+                    </div>
+                    <div class="lesson-content">
+                        <h3 class="lesson-title">PRIVATE LESSONS – for 1 student</h3>
+                        <p class="lesson-description">Our team of swim instructors have discovered through years of experience that private swim lessons are the most effective, productive and cost-efficient way of learning to swim. Your child is encouraged by peers, and is better able to focus on the teacher's instructions so that progress is maximized. Rather than just getting a few minutes of individual attention spread out over a long time, this method is responsible to get your child water safe and learning the strokes in an intensive session of 5 to 10 swim lessons!</p>
+                        <a href="#contact" class="lesson-btn">Schedule a Lesson</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-image">
+                        <!-- This place requires an image of semi-private swim lesson -->
+                        <img src="assets/lessons_img_2.jpg" alt="Semi-Private Swimming Lesson">
+                    </div>
+                    <div class="lesson-content">
+                        <h3 class="lesson-title">SEMI-PRIVATE LESSONS – for 2 students</h3>
+                        <p class="lesson-description">Sometimes students at similar levels can learn to swim well together, since they tend to motivate each other by example and healthy competition. This often works best for siblings and friends. It's also more affordable for you. For more information on Semi-Private Swim lessons, please email one of our offices for more information on Semi-Private Swim lessons.</p>
+                        <a href="#contact" class="lesson-btn">Schedule a Lesson</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-image">
+                        <!-- This place requires an image of mommy/daddy & me swim lesson -->
+                        <img src="assets/lessons_img_3.jpg" alt="Mommy Daddy and Me Swimming Lesson">
+                    </div>
+                    <div class="lesson-content">
+                        <h3 class="lesson-title">MOMMY/DADDY & ME – Swim lessons for infants</h3>
+                        <p class="lesson-description">These swim lessons are particularly great at getting babies acclimated to the water and making them look forward to swim lessons. Of course we use lots of games, songs and play (floating & water squirting toys) to engage your child in a way that makes getting used to the water a fun experience. The main benefit to starting out at such a young age is to prevent a fear of water from ever developing, so that swimming will become a safe and pleasant activity for your child. We strive to get your baby water-safe as soon as possible, and to have a healthy love and respect for the water.</p>
+                        <a href="#contact" class="lesson-btn">Schedule a Lesson</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="adult-lessons">
+        <div class="container">
+            <h2>We also offer swim lessons to adults!</h2>
+            <p>Our experienced, patient instructors can work at your individual pace to overcome any apprehension or fear that has prevented you from learning to swim in the past. Hundreds of adults have benefited from our concentrated one-on-one swim program to progress safely and comfortably in the water. Generally speaking, an intensive session of just 5 one-hour lessons will yield results that make it possible for you to never again have to say, "I can't swim."</p>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="cta-content">
+            <div class="cta-text">
+                <h3>Got questions? Don't hesitate to call or email.</h3>
+                <p>We love hearing from customers and are standing by to answer all your questions.</p>
+            </div>
+            <div class="cta-button">
+                <a href="contact.html" class="cta-btn">
+                    📞 CALL US NOW!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2>Aquasafe private swimming lessons will knock your socks off! Here's why:</h2>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-content">
+                        <h3>Save Time + Money</h3>
+                        <p>Our private swim lessons enable the swim instructor to focus all of the attention on your child, so learning to swim happens much faster.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏊</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at YOUR Pace</h3>
+                        <p>We accommodate your schedule and your child's ability with swim lessons that provide amazing results! We offer weekly, 2x weekly, 3x weekly to our "intensive swim program," which is 5x/week for 2 weeks.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Home</h3>
+                        <p>Our swim instructor can come to you, so that your child learns to swim in the privacy and convenience of your own home pool!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="yelp-rating">
+                <img src="assets/yelp-reviews.png" alt="5-Star Yelp Reviews" class="yelp-image">
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Riley totally learned how to swim this summer. She swims across the pool now, and I'm amazed."</div>
+                    <div class="testimonial-author">Holly Leff-Pressman - Universal Television Executive</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Our teacher was really great...and he always showed up 5 minutes early. Charlie learned a lot, and made great strides this summer."</div>
+                    <div class="testimonial-author">Tim Trepany, Brentwood, CA - Father of 6-year-old</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"My son was swimming in just two days. It was extraordinary! He's learning by leaps and bounds. I'm amazed!"</div>
+                    <div class="testimonial-author">May, Palm Springs - Mother of Danny, age 4</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="currentTestimonial(1)"></span>
+                <span class="dot" onclick="currentTestimonial(2)"></span>
+                <span class="dot" onclick="currentTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                Copyright 2014 AquaSafe Swimming Lessons.
+            </div>
+            <div class="contact-info">
+                L.A. & San Fernando: (310) 451-4455 | San Diego & Palm Springs: (760) 808-00
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
