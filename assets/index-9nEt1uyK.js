@@ -1,1 +1,413 @@
-var Ie=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);import*as a from"https://threejs.org/build/three.module.js";var _t=Ie(b=>{(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))n(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function i(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(r){if(r.ep)return;r.ep=!0;const s=i(r);fetch(r.href,s)}})();var y=Object.freeze({Linear:Object.freeze({None:function(e){return e},In:function(e){return this.None(e)},Out:function(e){return this.None(e)},InOut:function(e){return this.None(e)}}),Quadratic:Object.freeze({In:function(e){return e*e},Out:function(e){return e*(2-e)},InOut:function(e){return(e*=2)<1?.5*e*e:-.5*(--e*(e-2)-1)}}),Cubic:Object.freeze({In:function(e){return e*e*e},Out:function(e){return--e*e*e+1},InOut:function(e){return(e*=2)<1?.5*e*e*e:.5*((e-=2)*e*e+2)}}),Quartic:Object.freeze({In:function(e){return e*e*e*e},Out:function(e){return 1- --e*e*e*e},InOut:function(e){return(e*=2)<1?.5*e*e*e*e:-.5*((e-=2)*e*e*e-2)}}),Quintic:Object.freeze({In:function(e){return e*e*e*e*e},Out:function(e){return--e*e*e*e*e+1},InOut:function(e){return(e*=2)<1?.5*e*e*e*e*e:.5*((e-=2)*e*e*e*e+2)}}),Sinusoidal:Object.freeze({In:function(e){return 1-Math.sin((1-e)*Math.PI/2)},Out:function(e){return Math.sin(e*Math.PI/2)},InOut:function(e){return .5*(1-Math.sin(Math.PI*(.5-e)))}}),Exponential:Object.freeze({In:function(e){return e===0?0:Math.pow(1024,e-1)},Out:function(e){return e===1?1:1-Math.pow(2,-10*e)},InOut:function(e){return e===0?0:e===1?1:(e*=2)<1?.5*Math.pow(1024,e-1):.5*(-Math.pow(2,-10*(e-1))+2)}}),Circular:Object.freeze({In:function(e){return 1-Math.sqrt(1-e*e)},Out:function(e){return Math.sqrt(1- --e*e)},InOut:function(e){return(e*=2)<1?-.5*(Math.sqrt(1-e*e)-1):.5*(Math.sqrt(1-(e-=2)*e)+1)}}),Elastic:Object.freeze({In:function(e){return e===0?0:e===1?1:-Math.pow(2,10*(e-1))*Math.sin((e-1.1)*5*Math.PI)},Out:function(e){return e===0?0:e===1?1:Math.pow(2,-10*e)*Math.sin((e-.1)*5*Math.PI)+1},InOut:function(e){return e===0?0:e===1?1:(e*=2,e<1?-.5*Math.pow(2,10*(e-1))*Math.sin((e-1.1)*5*Math.PI):.5*Math.pow(2,-10*(e-1))*Math.sin((e-1.1)*5*Math.PI)+1)}}),Back:Object.freeze({In:function(e){var t=1.70158;return e===1?1:e*e*((t+1)*e-t)},Out:function(e){var t=1.70158;return e===0?0:--e*e*((t+1)*e+t)+1},InOut:function(e){var t=2.5949095;return(e*=2)<1?.5*(e*e*((t+1)*e-t)):.5*((e-=2)*e*((t+1)*e+t)+2)}}),Bounce:Object.freeze({In:function(e){return 1-y.Bounce.Out(1-e)},Out:function(e){return e<1/2.75?7.5625*e*e:e<2/2.75?7.5625*(e-=1.5/2.75)*e+.75:e<2.5/2.75?7.5625*(e-=2.25/2.75)*e+.9375:7.5625*(e-=2.625/2.75)*e+.984375},InOut:function(e){return e<.5?y.Bounce.In(e*2)*.5:y.Bounce.Out(e*2-1)*.5+.5}}),generatePow:function(e){return e===void 0&&(e=4),e=e<Number.EPSILON?Number.EPSILON:e,e=e>1e4?1e4:e,{In:function(t){return Math.pow(t,e)},Out:function(t){return 1-Math.pow(1-t,e)},InOut:function(t){return t<.5?Math.pow(t*2,e)/2:(1-Math.pow(2-t*2,e))/2+.5}}}}),v=function(){return performance.now()},ae=function(){function e(){this._tweens={},this._tweensAddedDuringUpdate={}}return e.prototype.getAll=function(){var t=this;return Object.keys(this._tweens).map(function(i){return t._tweens[i]})},e.prototype.removeAll=function(){this._tweens={}},e.prototype.add=function(t){this._tweens[t.getId()]=t,this._tweensAddedDuringUpdate[t.getId()]=t},e.prototype.remove=function(t){delete this._tweens[t.getId()],delete this._tweensAddedDuringUpdate[t.getId()]},e.prototype.update=function(t,i){t===void 0&&(t=v()),i===void 0&&(i=!1);var n=Object.keys(this._tweens);if(n.length===0)return!1;for(;n.length>0;){this._tweensAddedDuringUpdate={};for(var r=0;r<n.length;r++){var s=this._tweens[n[r]],o=!i;s&&s.update(t,o)===!1&&!i&&delete this._tweens[n[r]]}n=Object.keys(this._tweensAddedDuringUpdate)}return!0},e}(),p={Linear:function(e,t){var i=e.length-1,n=i*t,r=Math.floor(n),s=p.Utils.Linear;return t<0?s(e[0],e[1],n):t>1?s(e[i],e[i-1],i-n):s(e[r],e[r+1>i?i:r+1],n-r)},Bezier:function(e,t){for(var i=0,n=e.length-1,r=Math.pow,s=p.Utils.Bernstein,o=0;o<=n;o++)i+=r(1-t,n-o)*r(t,o)*e[o]*s(n,o);return i},CatmullRom:function(e,t){var i=e.length-1,n=i*t,r=Math.floor(n),s=p.Utils.CatmullRom;return e[0]===e[i]?(t<0&&(r=Math.floor(n=i*(1+t))),s(e[(r-1+i)%i],e[r],e[(r+1)%i],e[(r+2)%i],n-r)):t<0?e[0]-(s(e[0],e[0],e[1],e[1],-n)-e[0]):t>1?e[i]-(s(e[i],e[i],e[i-1],e[i-1],n-i)-e[i]):s(e[r?r-1:0],e[r],e[i<r+1?i:r+1],e[i<r+2?i:r+2],n-r)},Utils:{Linear:function(e,t,i){return(t-e)*i+e},Bernstein:function(e,t){var i=p.Utils.Factorial;return i(e)/i(t)/i(e-t)},Factorial:function(){var e=[1];return function(t){var i=1;if(e[t])return e[t];for(var n=t;n>1;n--)i*=n;return e[t]=i,i}}(),CatmullRom:function(e,t,i,n,r){var s=(i-e)*.5,o=(n-t)*.5,c=r*r,h=r*c;return(2*t-2*i+s+o)*h+(-3*t+3*i-2*s-o)*c+s*r+t}}},H=function(){function e(){}return e.nextId=function(){return e._nextId++},e._nextId=0,e}(),N=new ae,Oe=function(){function e(t,i){i===void 0&&(i=N),this._object=t,this._group=i,this._isPaused=!1,this._pauseStart=0,this._valuesStart={},this._valuesEnd={},this._valuesStartRepeat={},this._duration=1e3,this._isDynamic=!1,this._initialRepeat=0,this._repeat=0,this._yoyo=!1,this._isPlaying=!1,this._reversed=!1,this._delayTime=0,this._startTime=0,this._easingFunction=y.Linear.None,this._interpolationFunction=p.Linear,this._chainedTweens=[],this._onStartCallbackFired=!1,this._onEveryStartCallbackFired=!1,this._id=H.nextId(),this._isChainStopped=!1,this._propertiesAreSetUp=!1,this._goToEnd=!1}return e.prototype.getId=function(){return this._id},e.prototype.isPlaying=function(){return this._isPlaying},e.prototype.isPaused=function(){return this._isPaused},e.prototype.to=function(t,i){if(i===void 0&&(i=1e3),this._isPlaying)throw new Error("Can not call Tween.to() while Tween is already started or paused. Stop the Tween first.");return this._valuesEnd=t,this._propertiesAreSetUp=!1,this._duration=i,this},e.prototype.duration=function(t){return t===void 0&&(t=1e3),this._duration=t,this},e.prototype.dynamic=function(t){return t===void 0&&(t=!1),this._isDynamic=t,this},e.prototype.start=function(t,i){if(t===void 0&&(t=v()),i===void 0&&(i=!1),this._isPlaying)return this;if(this._group&&this._group.add(this),this._repeat=this._initialRepeat,this._reversed){this._reversed=!1;for(var n in this._valuesStartRepeat)this._swapEndStartRepeatValues(n),this._valuesStart[n]=this._valuesStartRepeat[n]}if(this._isPlaying=!0,this._isPaused=!1,this._onStartCallbackFired=!1,this._onEveryStartCallbackFired=!1,this._isChainStopped=!1,this._startTime=t,this._startTime+=this._delayTime,!this._propertiesAreSetUp||i){if(this._propertiesAreSetUp=!0,!this._isDynamic){var r={};for(var s in this._valuesEnd)r[s]=this._valuesEnd[s];this._valuesEnd=r}this._setupProperties(this._object,this._valuesStart,this._valuesEnd,this._valuesStartRepeat,i)}return this},e.prototype.startFromCurrentValues=function(t){return this.start(t,!0)},e.prototype._setupProperties=function(t,i,n,r,s){for(var o in n){var c=t[o],h=Array.isArray(c),_=h?"array":typeof c,u=!h&&Array.isArray(n[o]);if(!(_==="undefined"||_==="function")){if(u){var d=n[o];if(d.length===0)continue;for(var V=[c],L=0,Se=d.length;L<Se;L+=1){var Z=this._handleRelativeValue(c,d[L]);if(isNaN(Z)){u=!1,console.warn("Found invalid interpolation list. Skipping.");break}V.push(Z)}u&&(n[o]=V)}if((_==="object"||h)&&c&&!u){i[o]=h?[]:{};var m=c;for(var g in m)i[o][g]=m[g];r[o]=h?[]:{};var d=n[o];if(!this._isDynamic){var $={};for(var g in d)$[g]=d[g];n[o]=d=$}this._setupProperties(m,i[o],d,r[o],s)}else(typeof i[o]>"u"||s)&&(i[o]=c),h||(i[o]*=1),u?r[o]=n[o].slice().reverse():r[o]=i[o]||0}}},e.prototype.stop=function(){return this._isChainStopped||(this._isChainStopped=!0,this.stopChainedTweens()),this._isPlaying?(this._group&&this._group.remove(this),this._isPlaying=!1,this._isPaused=!1,this._onStopCallback&&this._onStopCallback(this._object),this):this},e.prototype.end=function(){return this._goToEnd=!0,this.update(1/0),this},e.prototype.pause=function(t){return t===void 0&&(t=v()),this._isPaused||!this._isPlaying?this:(this._isPaused=!0,this._pauseStart=t,this._group&&this._group.remove(this),this)},e.prototype.resume=function(t){return t===void 0&&(t=v()),!this._isPaused||!this._isPlaying?this:(this._isPaused=!1,this._startTime+=t-this._pauseStart,this._pauseStart=0,this._group&&this._group.add(this),this)},e.prototype.stopChainedTweens=function(){for(var t=0,i=this._chainedTweens.length;t<i;t++)this._chainedTweens[t].stop();return this},e.prototype.group=function(t){return t===void 0&&(t=N),this._group=t,this},e.prototype.delay=function(t){return t===void 0&&(t=0),this._delayTime=t,this},e.prototype.repeat=function(t){return t===void 0&&(t=0),this._initialRepeat=t,this._repeat=t,this},e.prototype.repeatDelay=function(t){return this._repeatDelayTime=t,this},e.prototype.yoyo=function(t){return t===void 0&&(t=!1),this._yoyo=t,this},e.prototype.easing=function(t){return t===void 0&&(t=y.Linear.None),this._easingFunction=t,this},e.prototype.interpolation=function(t){return t===void 0&&(t=p.Linear),this._interpolationFunction=t,this},e.prototype.chain=function(){for(var t=[],i=0;i<arguments.length;i++)t[i]=arguments[i];return this._chainedTweens=t,this},e.prototype.onStart=function(t){return this._onStartCallback=t,this},e.prototype.onEveryStart=function(t){return this._onEveryStartCallback=t,this},e.prototype.onUpdate=function(t){return this._onUpdateCallback=t,this},e.prototype.onRepeat=function(t){return this._onRepeatCallback=t,this},e.prototype.onComplete=function(t){return this._onCompleteCallback=t,this},e.prototype.onStop=function(t){return this._onStopCallback=t,this},e.prototype.update=function(t,i){if(t===void 0&&(t=v()),i===void 0&&(i=!0),this._isPaused)return!0;var n,r,s=this._startTime+this._duration;if(!this._goToEnd&&!this._isPlaying){if(t>s)return!1;i&&this.start(t,!0)}if(this._goToEnd=!1,t<this._startTime)return!0;this._onStartCallbackFired===!1&&(this._onStartCallback&&this._onStartCallback(this._object),this._onStartCallbackFired=!0),this._onEveryStartCallbackFired===!1&&(this._onEveryStartCallback&&this._onEveryStartCallback(this._object),this._onEveryStartCallbackFired=!0),r=(t-this._startTime)/this._duration,r=this._duration===0||r>1?1:r;var o=this._easingFunction(r);if(this._updateProperties(this._object,this._valuesStart,this._valuesEnd,o),this._onUpdateCallback&&this._onUpdateCallback(this._object,r),r===1)if(this._repeat>0){isFinite(this._repeat)&&this._repeat--;for(n in this._valuesStartRepeat)!this._yoyo&&typeof this._valuesEnd[n]=="string"&&(this._valuesStartRepeat[n]=this._valuesStartRepeat[n]+parseFloat(this._valuesEnd[n])),this._yoyo&&this._swapEndStartRepeatValues(n),this._valuesStart[n]=this._valuesStartRepeat[n];return this._yoyo&&(this._reversed=!this._reversed),this._repeatDelayTime!==void 0?this._startTime=t+this._repeatDelayTime:this._startTime=t+this._delayTime,this._onRepeatCallback&&this._onRepeatCallback(this._object),this._onEveryStartCallbackFired=!1,!0}else{this._onCompleteCallback&&this._onCompleteCallback(this._object);for(var c=0,h=this._chainedTweens.length;c<h;c++)this._chainedTweens[c].start(this._startTime+this._duration,!1);return this._isPlaying=!1,!1}return!0},e.prototype._updateProperties=function(t,i,n,r){for(var s in n)if(i[s]!==void 0){var o=i[s]||0,c=n[s],h=Array.isArray(t[s]),_=Array.isArray(c),u=!h&&_;u?t[s]=this._interpolationFunction(c,r):typeof c=="object"&&c?this._updateProperties(t[s],o,c,r):(c=this._handleRelativeValue(o,c),typeof c=="number"&&(t[s]=o+(c-o)*r))}},e.prototype._handleRelativeValue=function(t,i){return typeof i!="string"?i:i.charAt(0)==="+"||i.charAt(0)==="-"?t+parseFloat(i):parseFloat(i)},e.prototype._swapEndStartRepeatValues=function(t){var i=this._valuesStartRepeat[t],n=this._valuesEnd[t];typeof n=="string"?this._valuesStartRepeat[t]=this._valuesStartRepeat[t]+parseFloat(n):this._valuesStartRepeat[t]=this._valuesEnd[t],this._valuesEnd[t]=i},e}(),Ee="21.0.0",xe=H.nextId,l=N,ke=l.getAll.bind(l),Te=l.removeAll.bind(l),Re=l.add.bind(l),je=l.remove.bind(l),Ae=l.update.bind(l),b={Easing:y,Group:ae,Interpolation:p,now:v,Sequence:H,nextId:xe,Tween:Oe,VERSION:Ee,getAll:ke,removeAll:Te,add:Re,remove:je,update:Ae};const W=new a.TextureLoader,ee=window.innerHeight*window.innerWidth,ze=0,Fe=0,Le=0,me=-50,De=new a.MeshBasicMaterial({color:ze,side:a.DoubleSide}),Ne=new a.PlaneGeometry(ee,ee),te=1,Be=12,Ue=32,He=new a.CylinderGeometry(te,te,Be,Ue),We=15,ie=3.4,qe="/assets/hover selectors/click_hover3.svg",Ge="/assets/hover selectors/click_hover_reverse3.svg",Qe="/assets/hover selectors/hover_cap3.svg",Ye=W.load(qe),Ke=W.load(Ge),Xe=W.load(Qe),ne=new a.MeshPhongMaterial({map:Xe,transparent:!0,opacity:1,color:16777215,shininess:1e3}),re=new a.MeshPhongMaterial({map:Ye,transparent:!0,opacity:1,color:16777215,shininess:1e3}),se=new a.MeshPhongMaterial({map:Ke,transparent:!0,opacity:1,color:16777215,shininess:1e3}),Je=[ne,ne,re,re,se,se],oe=6,Ve=36,D=1,Ze=Math.PI/2.1;function $e(){const e=new a.Mesh(Ne,De);return e.position.set(Fe,Le,me),e}function O(e,t){const i=new a.BoxGeometry(We,ie,ie),n=new a.Mesh(i,Je);return n.position.set(0,e,0),n.rotation.y=t,n.visible=!1,n}function E(e,t,i){const n=new a.MeshPhongMaterial({color:t,shininess:1e3}),r=new a.Mesh(He,n);return r.position.set(0,e,0),r.rotation.z=Math.PI/2,r.rotation.y=i,r}function ce(e){const t=[];for(let o=0;o<D*55;o++){const c=o*Math.PI*2/(D*100),h=oe*Math.cos(c),_=Ve*o/(D*100),u=oe*Math.sin(c);t.push(new a.Vector3(h,_,u))}const i=new a.CatmullRomCurve3(t),n=new a.TubeGeometry(i,50,1.3,8),r=new a.MeshNormalMaterial,s=new a.Mesh(n,r);return s.rotation.y=e,s.position.y-=10,s.rotation.y+=Ze,s}const he=6,fe=2,le=-2,ue=-6,de=-Math.PI/2.4,_e=-Math.PI/5.25,pe=-Math.PI*1.96,ve=-Math.PI*1.75,et=6750054,tt=6750207,it=16738047,nt=16777062,w=new a.Scene,f=new a.PerspectiveCamera(75,window.innerWidth/window.innerHeight,1,100);var I=0,B=0,U=0;window.innerWidth<600?(I=Math.min(40+window.innerWidth/100,100),B=Math.min(15+window.innerWidth/100,30),U=Math.min(10+window.innerWidth/100,30)):(I=Math.max(20-window.innerWidth/100,15),B=5,U=5);const q=-Math.sin(2.7)*10,G=0,Q=I,rt=-B*1.5,st=U,ot=I*2;f.position.x=q;f.position.y=G;f.position.z=Q;f.rotation.set(0,0,0);f.rotation.z+=2.7;function Y(e,t,i,n){new b.Tween(f.position).to({x:e,y:t,z:i},n).easing(b.Easing.Quintic.Out).start()}const x=new a.WebGLRenderer({canvas:document.getElementById("helix_bg")});x.setPixelRatio(window.devicePixelRatio);x.setSize(window.innerWidth,window.innerHeight);const K=new a.DirectionalLight(16777215,4);K.position.y=-10;K.position.z=20;const at=new a.AmbientLight(4294967295);w.add(at,K);const X=$e();w.add(X);const ye=ce(0),we=ce(Math.PI);w.add(ye,we);const k=O(he,de),T=O(fe,_e),R=O(le,pe),j=O(ue,ve);w.add(k,T,R,j);const M=E(he,et,de),C=E(fe,tt,_e),P=E(le,it,pe),S=E(ue,nt,ve);w.add(M,C,P,S);z();Me();function A(e,t,i){e.onClick=function(){be(i),ge||Me()},e.onHover=function(n){t.visible=n}}A(M,k,"Fun");A(C,T,"Contact");A(P,R,"Projects");A(S,j,"AboutMe");var ge=!1,J=!1;const ct=document.querySelectorAll("div");function ht(e){J=!0}function ft(e){J=!1}ct.forEach(e=>{e.addEventListener("mouseover",ht),e.addEventListener("mouseout",ft)});window.addEventListener("click",e=>{const t=new a.Raycaster,i=new a.Vector2;i.x=e.clientX/window.innerWidth*2-1,i.y=-(e.clientY/window.innerHeight)*2+1,t.setFromCamera(i,f);const n=[M,C,P,S,X],r=t.intersectObjects(n);r.length>0&&!J&&r[0].object.onClick()});window.addEventListener("mousemove",e=>{const t=new a.Raycaster,i=new a.Vector2;i.x=e.clientX/window.innerWidth*2-1,i.y=-(e.clientY/window.innerHeight)*2+1,t.setFromCamera(i,f);const n=[M,C,P,S],r=t.intersectObjects(n);r.length>0?r[0].object.onHover(!0):n.forEach(s=>{s.onHover(!1)})});function z(){for(var e=document.getElementsByClassName("infoSection"),t=0;t<e.length;t++)e[t].style.display="none"}function be(e){z();var t=document.getElementById(e);t.style.display==="none"?(t.style.display="block",Y(rt,st,ot,800)):t.style.display="none"}function Me(){var e=document.getElementById("key");e.style.display==="none"?(e.style.display="block",ge=!0):e.style.display="none"}function F(e,t){document.getElementById(e).addEventListener("click",n=>{be(t)})}F("keyDiv1","AboutMe");F("keyDiv2","Projects");F("keyDiv3","Contact");F("keyDiv4","Fun");function lt(){let e=document.getElementsByClassName("closeTabIcon");Array.from(e).forEach(i=>i.addEventListener("click",n=>{z(),Y(q,G,Q,500)}))}lt();X.onClick=function(){z(),Y(q,G,Q,500)};function ut(){const e=new a.Quaternion().setFromAxisAngle(new a.Vector3(0,1,0).normalize(),.01);[k,T,R,j].forEach(t=>t.applyQuaternion(e))}function dt(e,t){var i=t.getElapsedTime();e.scale.set(1,1,1);const n=i/2;i>=2?(Ce=new a.Clock,e.scale.set(1,1,1)):i<1?(e.scale.y+=n,e.scale.z+=n):(e.scale.y-=n-1,e.scale.z-=n-1)}var Ce=new a.Clock;function Pe(){requestAnimationFrame(Pe),b.update(),[ye,we,M,C,P,S].forEach(e=>e.rotation.y+=.01),ut(),[k,T,R,j].forEach(e=>dt(e,Ce)),x.render(w,f)}window.addEventListener("resize",()=>{const e=window.innerWidth,t=window.innerHeight;f.aspect=e/t,f.updateProjectionMatrix(),x.setSize(e,t)});Pe()});export default _t();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSafe Swimming Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== PAGE-SPECIFIC STYLES FOR HOMEPAGE ===== */
+
+        /* Hero Section - Only on homepage */
+        .hero {
+            height: 100vh;
+            background: url('assets/home_background.png');
+            background-size: cover;
+            background-position: 70% center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 50px;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            color: white;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Services Section - Only on homepage */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 0 !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50% !important;
+            border: 3px solid #67cff6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 36px;
+            color: #4AAFBF;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 300;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Lifeguard Section - Only on homepage */
+        .lifeguard-section {
+            background: #67cff6;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .lifeguard-section h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .lifeguard-section p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .lifeguard-section a {
+            color: white;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+            font-weight: 300;
+        }
+
+        .lifeguard-section a:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        /* Philosophy Section - Only on homepage */
+        .philosophy {
+            padding: 80px 0;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h3 {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .philosophy h2 {
+            font-size: 36px;
+            color: #67cff6;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .philosophy p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .philosophy-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .philosophy-buttons .btn {
+            min-width: 200px;
+        }
+
+        .philosophy-buttons .btn-secondary {
+            color: #999;
+            border-color: #ccc;
+        }
+        /* Swimmer Image Section - Only on homepage */
+        .swimmer-image-section {
+            padding: 60px 0 30px 0; 
+            background: white;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .swimmer-image-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .swimmer-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+            margin-bottom: -30px; 
+        }
+
+        .swimmer-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .swimmer-image-section {
+                padding: 40px 0;
+            }
+            
+            .swimmer-image {
+                max-width: 100%;
+                margin: 0 20px;
+            }
+        }
+
+        /* Make the testimonials section overlap the image slightly */
+        .testimonials {
+            position: relative;
+            z-index: 2; /* Higher z-index to overlap the image section */
+            margin-top: -30px; /* Pull it up to hide bottom 1/20 of image */
+        }
+
+        /* Homepage Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                justify-content: center;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .philosophy-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/aquasafe_logo.svg" alt="AquaSafe Swimming Lessons" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="lessons.html">Our Swim Lessons</a></li>
+                    <li><a href="locations.html">Our Locations</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your pool or ours?</h1>
+            <p>Aquasafe specializes in private and semi-private swim lessons.</p>
+            <div class="hero-buttons">
+                <a href="#lessons" class="btn btn-primary">Our Lessons</a>
+                <!--<a href="#video" class="btn btn-secondary">Our Video</a> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="lessons">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>Private Swim Lessons</h3>
+                    <p>Your child will learn to swim one-on-one with an enthusiastic, professional AquaSafe certified swim instructor.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Semi-Private Swim Lessons</h3>
+                    <p>Your child will have a great time learning to swim with a partner, and progress quickly from water safety to basic strokes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Mommy, Daddy & Me Swim Lessons</h3>
+                    <p>Sing, play and have fun as your baby learns to love the water with our experienced, certified child-friendly swim instructor leading the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lifeguard-section">
+        <div class="container">
+            <h2>Need a certified LIFEGUARD for your next party or event?</h2>
+            <p><strong>Be Safe!</strong> Aquasafe has fully-certified LIFEGUARDS on staff and available for your upcoming party or event.</p>
+            <p>In LA or San Fernando: Call <a href="tel:310-451-4455">(310) 451-4455</a> or Email <a href="mailto:aquasafeswim@yahoo.com">aquasafeswim@yahoo.com</a> to reserve now.</p>
+            <p>In San Diego or Palm Springs: Call <a href="tel:619-531-8888">(619) 531-8888</a> or Email <a href="mailto:aquasafeswim@yahoo.com">aquasafeswim@yahoo.com</a> to reserve now.</p>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h3>Our Philosophy</h3>
+                <h2>We believe:</h2>
+                <p>Swimming lessons should be a fun and fear-free experience.</p>
+                <p>That's why our approach is less about checklists & drills, and more about games & skills.</p>
+                <div class="philosophy-buttons">
+                    <a href="contact.html" class="btn btn-primary">Schedule a Swim Lesson</a>
+                    <span style="color: #ccc; font-size: 18px;">or</span>
+                    <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Aquasafe private swimming lessons will knock your socks off! Here's why:</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-content">
+                        <h3>Save Time + Money</h3>
+                        <p>Our private swim lessons allow the swim instructor to focus all the attention on your child, so learning progresses at the best pace for YOUR child.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏊</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Your Pace</h3>
+                        <p>We accommodate your schedule and your child's ability with swim lessons that provide amazing results!</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Home</h3>
+                        <p>Our swim instructor can come to you, so that your child learns to swim in the privacy, comfort and convenience of your own home pool!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="swimmer-image-section">
+        <div class="container">
+            <div class="swimmer-image-container">
+                <img src="assets/swimmer-guy-bg.jpg" alt="Professional Swimming Instructor" class="swimmer-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="yelp-rating">
+                <img src="assets/yelp-reviews.png" alt="5-Star Yelp Reviews" class="yelp-image">
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"My son was swimming in just two days. It was extraordinary! He's learning by leaps and bounds. I'm amazed!"</div>
+                    <div class="testimonial-author">May, Palm Springs - Mother of Danny, age 4</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Riley totally learned how to swim this summer. She swims across the pool now, and I'm amazed."</div>
+                    <div class="testimonial-author">Holly Leff-Pressman - Universal Television Executive</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Our teacher was really great...and he always showed up 5 minutes early. Charlie learned a lot, and made great strides this summer."</div>
+                    <div class="testimonial-author">Tim Trepany, Brentwood, CA - Father of 6-year-old</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="currentTestimonial(1)"></span>
+                <span class="dot" onclick="currentTestimonial(2)"></span>
+                <span class="dot" onclick="currentTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                Copyright 2014 AquaSafe Swimming Lessons.
+            </div>
+            <div class="contact-info">
+                L.A. & San Fernando: (310) 451-4455 | San Diego & Palm Springs: (760) 808-
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
