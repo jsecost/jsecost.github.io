@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AquaSafe Swimming Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== PAGE-SPECIFIC STYLES FOR ABOUT US PAGE ===== */
+
+        /* Main Content Layout - Specific to About page */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .content-text {
+            color: #666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #5dc9fa;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .content-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        /* Founder Section - Specific to About page */
+        .founder-section {
+            margin-top: 60px;
+        }
+
+        .founder-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .founder-container {
+            width: 100%;
+        }
+
+        .founder-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            border-radius: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+            font-weight: 300;
+        }
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .founder-info {
+            padding: 20px 0;
+            text-align: center;
+            background: none;
+        }
+
+        .founder-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .founder-title {
+            font-size: 14px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* At a Glance Section - Specific to About page */
+        .glance-section {
+            margin-top: 40px;
+        }
+
+        .glance-section h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .glance-list {
+            list-style: none;
+        }
+
+        .glance-list li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 20px;
+            font-weight: 300;
+        }
+
+        .glance-list li::before {
+            content: "•";
+            color: #67cff6;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Stats Section - Specific to About page */
+        .stats-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 40px 20px;
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            color: #67cff6;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Why Choose Us Section - Specific to About page */
+        .why-choose {
+            background: #67cff6;
+            color: white;
+            padding: 60px 0 20px 0;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+
+        /* Features Section Override for About page */
+        .features-section {
+            padding: 40px 0 80px 0;
+            background: white;
+        }
+
+        .features-section .features-grid {
+            margin-top: 0;
+        }
+
+        /* About Page Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index_SD.html">
+                    <img src="assets/aquasafe_logo.svg" alt="AquaSafe Swimming Lessons" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index_SD.html">Home</a></li>
+                    <li><a href="about_SD.html" class="active">About Us</a></li>
+                    <li><a href="lessons_SD.html">Our Swim Lessons</a></li>
+                    <li><a href="locations_SD.html">Our Locations</a></li>
+                    <li><a href="contact_SD.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">About Us</h1>
+            <div class="breadcrumb">
+                You are here: <a href="index_SD.html">Home</a> - About Us
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="content-text">
+                    <p class="intro-text">Since 1991, thousands of children have learned to swim with the AquaSafe Swimming teaching method from our WSI and CPR-certified, experienced, enthusiastic instructors.</p>
+                    
+                    <p>AquaSafe Swim School uses a customized technique which insures that each student gets the most out of their swimming lesson. We're able to build immediate rapport with each child by using games, songs, props and encouragement.</p>
+
+                    <div class="glance-section">
+                        <h3>AquaSafe Swimming At a Glance</h3>
+                        <ul class="glance-list">
+                            <li>Private & Semi-Private Swimming Lessons</li>
+                            <li>We teach swim lessons to all ages... Babies, Children & Adults</li>
+                            <li>All swim levels, beginning through advanced technique</li>
+                            <li>Flexible hours for swim lessons at our pools or your home</li>
+                        </ul>
+                    </div>
+
+                    <div class="founder-section">
+                        <h2>From the Founder</h2>
+                        <p>I was blessed to start AquaSafe Swimming in 1991 after graduating from UC Irvine and running a children's creative movement program which incorporated games, songs, props and fun as tools to teach dance. I applied this concept in the creation of AquaSafe Swimming by including interactive and entertaining techniques to develop a learn-to-swim program for babies and children (and adults too!).</p>
+                        
+                        <p>For example, during a swim lesson, when we teach your child to flutter-kick using a kickboard, our teacher doesn't just say, "Kick across the pool," but rather, "Let's pretend you are a motor boat and have to get to the other side to rescue Mr. Frog." To teach side breathing, we talk to the fish with our bubbles... and listen to them by turning our head to the side and placing our ear on the water (while holding a toy underwater).</p>
+                        
+                        <p>Our instructors are creative and energetic, and will design each swim lesson for your child in a fun and effective manner. That's my promise.</p>
+                    </div>
+                </div>
+
+                <div class="founder-container">
+                    <div class="founder-image">
+                        <img src="assets/tracy_headshot.jpg" alt="TRACY ZEEMAN-CARPENTER">
+                    </div>
+                    <div class="founder-info">
+                        <div class="founder-name">TRACY ZEEMAN-CARPENTER</div>
+                        <div class="founder-title">Founder of AquaSafe, Wife and Mother of Two</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">📍</div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Pools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👤</div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Instructors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">5000</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-number" id="years-in-business">24</div>
+                    <div class="stat-label">Years in Business</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2>Aquasafe private swimming lessons will knock your socks off! Here's WHY:</h2>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-content">
+                        <h3>Save Time + Money</h3>
+                        <p>Our private swim lessons allows the swim instructor for focus all of the attention on your child, so learning to swim happens much faster.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏊</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at YOUR Pace</h3>
+                        <p>Our flexibility in scheduling allows us to accommodate your schedule and your child's ability with swim lessons that provide amazing results!</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Home</h3>
+                        <p>Our swim instructor can come to you, so that your child learns to swim in the privacy, comfort and convenience of your own home pool!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="special-needs">
+        <div class="container">
+            <h2>Special Needs</h2>
+            <p>We teach special needs students one-on-one. AquaSafe works with your local Regional Center for funding and will accept managers' approvals. Please contact your worker for more information.</p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="yelp-rating">
+                <img src="assets/yelp-reviews.png" alt="5-Star Yelp Reviews" class="yelp-image">
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Riley totally learned how to swim this summer. She swims across the pool now, and I'm amazed."</div>
+                    <div class="testimonial-author">Holly Leff-Pressman - Universal Television Executive</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Our teacher was really great...and he always showed up 5 minutes early. Charlie learned a lot, and made great strides this summer."</div>
+                    <div class="testimonial-author">Tim Trepany, Brentwood, CA - Father of 6-year-old</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"My son was swimming in just two days. It was extraordinary! He's learning by leaps and bounds. I'm amazed!"</div>
+                    <div class="testimonial-author">May, Palm Springs - Mother of Danny, age 4</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="currentTestimonial(1)"></span>
+                <span class="dot" onclick="currentTestimonial(2)"></span>
+                <span class="dot" onclick="currentTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                Copyright 2014 AquaSafe Swimming Lessons.
+            </div>
+            <div class="contact-info">
+                San Diego & Palm Springs: (760) 808-0022
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
