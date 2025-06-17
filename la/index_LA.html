@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSafe Swimming Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== PAGE-SPECIFIC STYLES FOR HOMEPAGE ===== */
+
+        /* Hero Section - Only on homepage */
+        .hero {
+            height: 100vh;
+            background: url('assets/home_background.png');
+            background-size: cover;
+            background-position: 70% center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 50px;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            color: white;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Services Section - Only on homepage */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 0 !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50% !important;
+            border: 3px solid #67cff6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 36px;
+            color: #4AAFBF;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 300;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Lifeguard Section - Only on homepage */
+        .lifeguard-section {
+            background: #67cff6;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .lifeguard-section h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .lifeguard-section p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .lifeguard-section a {
+            color: white;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+            font-weight: 300;
+        }
+
+        .lifeguard-section a:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        /* Philosophy Section - Only on homepage */
+        .philosophy {
+            padding: 80px 0;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h3 {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .philosophy h2 {
+            font-size: 36px;
+            color: #67cff6;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .philosophy p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .philosophy-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .philosophy-buttons .btn {
+            min-width: 200px;
+        }
+
+        .philosophy-buttons .btn-secondary {
+            color: #999;
+            border-color: #ccc;
+        }
+        /* Swimmer Image Section - Only on homepage */
+        .swimmer-image-section {
+            padding: 60px 0 30px 0; 
+            background: white;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .swimmer-image-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .swimmer-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+            margin-bottom: -30px; 
+        }
+
+        .swimmer-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .swimmer-image-section {
+                padding: 40px 0;
+            }
+            
+            .swimmer-image {
+                max-width: 100%;
+                margin: 0 20px;
+            }
+        }
+
+        /* Make the testimonials section overlap the image slightly */
+        .testimonials {
+            position: relative;
+            z-index: 2; /* Higher z-index to overlap the image section */
+            margin-top: -30px; /* Pull it up to hide bottom 1/20 of image */
+        }
+
+        /* Homepage Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                justify-content: center;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .philosophy-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index_LA.html">
+                    <img src="assets/aquasafe_logo.svg" alt="AquaSafe Swimming Lessons" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index_LA.html" class="active">Home</a></li>
+                    <li><a href="about_LA.html">About Us</a></li>
+                    <li><a href="lessons_LA.html">Our Swim Lessons</a></li>
+                    <li><a href="locations_LA.html">Our Locations</a></li>
+                    <li><a href="contact_LA.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your pool or ours?</h1>
+            <p>Aquasafe specializes in private and semi-private swim lessons.</p>
+            <div class="hero-buttons">
+                <a href="#lessons" class="btn btn-primary">Our Lessons</a>
+                <!--<a href="#video" class="btn btn-secondary">Our Video</a> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="lessons">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>Private Swim Lessons</h3>
+                    <p>Your child will learn to swim one-on-one with an enthusiastic, professional AquaSafe certified swim instructor.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Semi-Private Swim Lessons</h3>
+                    <p>Your child will have a great time learning to swim with a partner, and progress quickly from water safety to basic strokes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Mommy, Daddy & Me Swim Lessons</h3>
+                    <p>Sing, play and have fun as your baby learns to love the water with our experienced, certified child-friendly swim instructor leading the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lifeguard-section">
+        <div class="container">
+            <h2>Need a certified LIFEGUARD for your next party or event?</h2>
+            <p><strong>Be Safe!</strong> Aquasafe has fully-certified LIFEGUARDS on staff and available for your upcoming party or event.</p>
+            <p>In LA or San Fernando: Call <a href="tel:310-451-4455">(310) 451-4455</a> or Email <a href="mailto:aquasafeswim@yahoo.com">aquasafeswim@yahoo.com</a> to reserve now.</p>
+            <p>In San Diego or Palm Springs: Call <a href="tel:619-531-8888">(619) 531-8888</a> or Email <a href="mailto:aquasafeswim@yahoo.com">aquasafeswim@yahoo.com</a> to reserve now.</p>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h3>Our Philosophy</h3>
+                <h2>We believe:</h2>
+                <p>Swimming lessons should be a fun and fear-free experience.</p>
+                <p>That's why our approach is less about checklists & drills, and more about games & skills.</p>
+                <div class="philosophy-buttons">
+                    <a href="contact.html" class="btn btn-primary">Schedule a Swim Lesson</a>
+                    <span style="color: #ccc; font-size: 18px;">or</span>
+                    <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Aquasafe private swimming lessons will knock your socks off! Here's why:</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-content">
+                        <h3>Save Time + Money</h3>
+                        <p>Our private swim lessons allow the swim instructor to focus all the attention on your child, so learning progresses at the best pace for YOUR child.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏊</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Your Pace</h3>
+                        <p>We accommodate your schedule and your child's ability with swim lessons that provide amazing results!</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <div class="feature-content">
+                        <h3>Learn to swim at Home</h3>
+                        <p>Our swim instructor can come to you, so that your child learns to swim in the privacy, comfort and convenience of your own home pool!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="swimmer-image-section">
+        <div class="container">
+            <div class="swimmer-image-container">
+                <img src="assets/swimmer-guy-bg.jpg" alt="Professional Swimming Instructor" class="swimmer-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="yelp-rating">
+                <a href="https://www.yelp.com/biz/aquasafe-swimming-san-diego-clairmont" class="active"><img src="assets/yelp-reviews.png" alt="5-Star Yelp Reviews" class="yelp-image"></a>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"My son was swimming in just two days. It was extraordinary! He's learning by leaps and bounds. I'm amazed!"</div>
+                    <div class="testimonial-author">May, Palm Springs - Mother of Danny, age 4</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Riley totally learned how to swim this summer. She swims across the pool now, and I'm amazed."</div>
+                    <div class="testimonial-author">Holly Leff-Pressman - Universal Television Executive</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">"Our teacher was really great...and he always showed up 5 minutes early. Charlie learned a lot, and made great strides this summer."</div>
+                    <div class="testimonial-author">Tim Trepany, Brentwood, CA - Father of 6-year-old</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="currentTestimonial(1)"></span>
+                <span class="dot" onclick="currentTestimonial(2)"></span>
+                <span class="dot" onclick="currentTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                Copyright 2014 AquaSafe Swimming Lessons.
+            </div>
+            <div class="contact-info">
+                L.A. & San Fernando: (310) 451-4455 | San Diego & Palm Springs: (760) 808-
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
