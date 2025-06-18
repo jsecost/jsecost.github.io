@@ -231,7 +231,7 @@ body {
 
 /* Page Header - Used on interior pages */
 .page-header {
-    background: #f0f0f0;
+    background: #e7fdff;
     padding: 20px 0;
     margin-top: 80px;
 }
@@ -322,7 +322,7 @@ body {
 
 /* Special Needs Section - Used on all pages */
 .special-needs {
-    background: #f8f9fa;
+    background: #f9f871;
     padding: 60px 0;
     text-align: center;
 }
@@ -341,6 +341,20 @@ body {
     max-width: 800px;
     margin: 0 auto;
     font-weight: 300;
+}
+
+/* Why Choose Us Section - Specific to About page */
+.why-choose {
+    background: #67cff6;
+    color: white;
+    padding: 60px 0 20px 0;
+    text-align: center;
+}
+
+.why-choose h2 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 20px;
 }
 
 
