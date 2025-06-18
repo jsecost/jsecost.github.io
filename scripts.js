@@ -14,6 +14,8 @@ function showTestimonial(n) {
     const testimonials = document.querySelectorAll('.testimonial');
     const dots = document.querySelectorAll('.dot');
     
+    if (testimonials.length === 0) return;
+    
     if (n > totalTestimonials) testimonialIndex = 1;
     if (n < 1) testimonialIndex = totalTestimonials;
     
