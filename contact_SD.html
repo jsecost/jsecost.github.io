@@ -206,6 +206,48 @@
             margin-bottom: 60px;
         }
 
+        /* Simple Social Media Section */
+        .social-media-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .social-media-section h3 {
+            color: white;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .social-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .social-logo {
+            width: 90px;
+            height: 90px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .social-logos {
+                gap: 20px;
+            }
+            
+            .social-logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
         
 
         /* Contact Page Responsive */
@@ -250,12 +292,6 @@
     </style>
 </head>
 <body>
-    <!-- Floating Instagram Element -->
-    <div class="floating-instagram">
-        <a href="https://www.instagram.com/aquasafeswim/" target="_blank" rel="noopener noreferrer" class="instagram-link" aria-label="Follow AquaSafe on Instagram">
-            <img src="assets/ig_logo.png" alt="Instagram" class="instagram-logo">
-        </a>
-    </div>
     <header class="header">
         <div class="nav-container">
             <div class="logo">
@@ -307,22 +343,26 @@
                     </div>
 
                     <div class="contact-section">
-                        <h3>📍 L.A. & San Fernando Valley</h3>
-                        <p><strong>Phone:</strong> <a href="tel:310-451-4455">(310) 451-4455</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:aquasafeswim@yahoo.com">aquasafeswim@yahoo.com</a></p>
-                    </div>
-
-                    <div class="contact-section">
                         <h3>Follow us on Instagram</h3>
                         <a href="https://www.instagram.com/aquasafeswim/" target="_blank" rel="noopener noreferrer" class="social-link">
                             <img src="assets/ig_logo.png" alt="Instagram" style="width: 40px; height: 40px; margin-right: 8px; vertical-align: middle;">
                             Follow AquaSafe on Instagram
                         </a>
+                        <h3>Follow us on Facebook</h3>
+                        <a href="https://www.facebook.com/AquaSafeSanDiego/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="assets/facebook_logo.png" alt="Instagram" style="width: 40px; height: 40px; margin-right: 8px; vertical-align: middle;">
+                            Follow AquaSafe on Facebook
+                        </a>
+                        <h3>Find us on Yelp</h3>
+                        <a href="https://www.yelp.com/biz/aquasafe-swimming-san-diego-clairmont" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="assets/yelp.png" alt="Yelp" style="width: 40px; height: 40px; margin-right: 8px; vertical-align: middle;">
+                            Find AquaSafe on Yelp
+                        </a>
                     </div>
                 </div>
 
                 <div class="pricing-info">
-                    <h3>💰 Pricing Information</h3>
+                    <h3>Pricing Information</h3>
                     
                     <div class="pricing-item">
                         <div class="pricing-title">Our Pool</div>
@@ -405,8 +445,18 @@
 
     <section class="testimonials">
         <div class="container">
-            <div class="yelp-rating">
-                <a href="https://www.yelp.com/biz/aquasafe-swimming-san-diego-clairmont" class="active"><img src="assets/yelp-reviews.png" alt="5-Star Yelp Reviews" class="yelp-image"></a>
+            <div class="social-media-section">
+                <div class="social-logos">
+                    <a href="https://www.instagram.com/aquasafeswim/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/ig_logo.png" alt="Instagram" class="social-logo">
+                    </a>
+                    <a href="https://www.facebook.com/AquaSafeSanDiego/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/facebook_logo.png" alt="Facebook" class="social-logo">
+                    </a>
+                    <a href="https://www.yelp.com/biz/aquasafe-swimming-san-diego-clairmont" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/yelp.png" alt="Yelp" class="social-logo">
+                    </a>
+                </div>
             </div>
             
             <div class="testimonial-container">
