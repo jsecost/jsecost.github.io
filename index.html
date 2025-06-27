@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase McTaggart - Keynote Speaker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span id="logo-text">Chase McTaggart</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <!-- Navigation items will be loaded from JSON -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop class="hero-video">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 id="hero-catchphrase" class="hero-title"></h1>
+            <p id="hero-subtitle" class="hero-subtitle"></p>
+        </div>
+    </section>
+
+    <!-- Book Now CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="book-cta-title" class="section-title"></h2>
+                <p id="book-cta-description" class="cta-description"></p>
+                <a href="book.html" class="btn-primary" id="book-cta-button"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Preview Section -->
+    <section class="testimonials-preview">
+        <div class="container">
+            <h2 class="section-title clickable-title" onclick="window.location.href='testimonials.html'" id="testimonials-section-title"></h2>
+            <div class="testimonials-scroll" id="testimonials-container">
+                <!-- Testimonials will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Is Chase Section -->
+    <section class="who-is-section">
+        <div class="container">
+            <h2 class="section-title clickable-title" onclick="window.location.href='about.html'" id="who-is-title"></h2>
+            <div class="who-is-content">
+                <div class="who-is-text">
+                    <p id="who-is-description"></p>
+                </div>
+                <div class="who-is-video">
+                    <video controls class="explanation-video">
+                        <source src="assets/explanation-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title" id="gallery-title"></h2>
+            <div class="gallery-grid" id="gallery-container">
+                <!-- Gallery items will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="final-cta-title" class="section-title"></h2>
+                <a href="book.html" class="btn-primary" id="final-cta-button"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-text" class="small-text"></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
