@@ -1,0 +1,72 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "title": "CEO, TechInnovate Solutions",
+      "quote": "Chase transformed our entire company culture in just 90 minutes. Our team left energized and aligned like never before.",
+      "image": "assets/testimonial1.jpg"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "title": "VP of Sales, Global Dynamics",
+      "quote": "The insights Chase shared on leadership resilience have become core principles in our organization. Truly transformational.",
+      "image": "assets/testimonial2.jpg"
+    },
+    {
+      "name": "Jennifer Chen",
+      "title": "Director of HR, Future Systems",
+      "quote": "Chase's presentation on innovation mindset sparked a creativity revolution in our teams. Best investment we've made.",
+      "image": "assets/testimonial3.jpg"
+    },
+    {
+      "name": "David Thompson",
+      "title": "President, Manufacturing Excellence",
+      "quote": "After 25 years in business, Chase showed us perspectives we never considered. Our leadership team is completely renewed.",
+      "image": "assets/testimonial4.jpg"
+    },
+    {
+      "name": "Lisa Wang",
+      "title": "Chief Innovation Officer, StartupHub",
+      "quote": "Chase doesn't just speak to your audience - he connects with them. The engagement and energy were incredible.",
+      "image": "assets/testimonial5.jpg"
+    },
+    {
+      "name": "Robert Martinez",
+      "title": "Executive Director, Leadership Institute",
+      "quote": "We've hosted hundreds of speakers. Chase stands out for his authenticity and practical wisdom that creates lasting impact.",
+      "image": "assets/testimonial6.jpg"
+    }
+  ],
+  "video_testimonials": [
+    {
+      "name": "Amanda Foster",
+      "title": "CEO, Growth Partners",
+      "video_url": "assets/video-testimonial1.mp4",
+      "thumbnail": "assets/video-thumb1.jpg"
+    },
+    {
+      "name": "James Wilson",
+      "title": "Director, Leadership Summit",
+      "video_url": "assets/video-testimonial2.mp4",
+      "thumbnail": "assets/video-thumb2.jpg"
+    }
+  ],
+  "gallery_items": [
+    {
+      "image": "assets/gallery1.jpg",
+      "caption": "Corporate Leadership Summit 2024"
+    },
+    {
+      "image": "assets/gallery2.jpg",
+      "caption": "Innovation Conference Keynote"
+    },
+    {
+      "image": "assets/gallery1.jpg",
+      "caption": "International Business Forum"
+    },
+    {
+      "image": "assets/gallery2.jpg",
+      "caption": "Executive Leadership Workshop"
+    }
+  ]
+}

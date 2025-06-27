@@ -1,0 +1,47 @@
+{
+  "logo": "Chase McTaggart",
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "index.html"
+    },
+    {
+      "text": "About",
+      "href": "about.html"
+    },
+    {
+      "text": "Testimonials",
+      "href": "testimonials.html"
+    },
+    {
+      "text": "Book Now",
+      "href": "book.html"
+    }
+  ],
+  "section_titles": {
+    "testimonials": "What People Are Saying",
+    "experience": "Experience & Impact",
+    "credentials": "Credentials & Recognition",
+    "topics": "Speaking Topics",
+    "video_testimonials": "Video Testimonials"
+  },
+  "form_labels": {
+    "name": "Full Name *",
+    "email": "Email Address *",
+    "company": "Company/Organization",
+    "phone": "Phone Number",
+    "event_type": "Event Type *",
+    "event_date": "Preferred Event Date",
+    "attendees": "Expected Attendees",
+    "message": "Tell us about your event *",
+    "submit": "Send Inquiry"
+  },
+  "event_types": [
+    "Keynote Presentation",
+    "Workshop",
+    "Panel Discussion",
+    "Multi-day Program",
+    "Virtual Event",
+    "Other"
+  ]
+}

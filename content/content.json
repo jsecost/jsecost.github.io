@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "catchphrase": "Transform Your Leadership, Transform Your Business",
+    "subtitle": "Real people — real results — great negotiations"
+  },
+  "sections": {
+    "book_cta": {
+      "title": "Ready to Transform Your Event?",
+      "description": "Book Chase for your next conference, workshop, or corporate event and watch your team reach new heights.",
+      "button_text": "Book Chase Now"
+    },
+    "who_is": {
+      "title": "Who Is Chase McTaggart",
+      "description": "Award-winning speaker with 15+ years of experience helping organizations unlock their potential. Chase has spoken to over 500,000 people across 40 countries, delivering transformational insights on leadership, innovation, and peak performance."
+    },
+    "gallery": {
+      "title": "Speaking Gallery"
+    },
+    "final_cta": {
+      "title": "Ready to Inspire Your Team?",
+      "button_text": "Book Chase Today"
+    }
+  },
+  "about": {
+    "title": "About Chase McTaggart",
+    "subtitle": "Transformational speaker, leadership expert, and catalyst for change",
+    "bio_paragraphs": [
+      "Chase McTaggart is a world-renowned keynote speaker who has dedicated his career to helping individuals and organizations unlock their full potential. With over 15 years of experience in leadership development, Chase has become one of the most sought-after speakers in the corporate world.",
+      "His journey began in the corporate trenches, where he witnessed firsthand the challenges that teams face in today's rapidly changing business environment. This experience shaped his unique approach to leadership and transformation.",
+      "Chase's speaking style combines practical wisdom with inspiring storytelling, creating memorable experiences that drive real change. His clients include Fortune 500 companies, international organizations, and industry associations worldwide."
+    ],
+    "photo": "assets/chase-headshot.jpg",
+    "cta": {
+      "title": "Bring Chase to Your Next Event",
+      "description": "Transform your organization with proven strategies and inspiring leadership insights.",
+      "button_text": "Book Chase"
+    }
+  },
+  "experience": [
+    {
+      "title": "500,000+",
+      "description": "People Inspired"
+    },
+    {
+      "title": "40+",
+      "description": "Countries Visited"
+    },
+    {
+      "title": "15+",
+      "description": "Years Speaking"
+    },
+    {
+      "title": "98%",
+      "description": "Client Satisfaction"
+    }
+  ],
+  "credentials": [
+    "Certified Speaking Professional (CSP)",
+    "Master of Business Administration - Harvard",
+    "Featured in Forbes, Inc., and Entrepreneur",
+    "Author of 'Leadership Unleashed'"
+  ],
+  "testimonials_page": {
+    "title": "What People Are Saying",
+    "subtitle": "Real results from real events",
+    "cta": {
+      "title": "Experience the Transformation",
+      "description": "Join the hundreds of organizations that have transformed their culture with Chase's insights.",
+      "button_text": "Book Your Event"
+    }
+  },
+  "philosophy": {
+    "title": "Chase's Speaking Philosophy",
+    "content": "I believe that every individual has untapped potential waiting to be unleashed. My mission is to provide the tools, insights, and inspiration needed to unlock that potential and create lasting transformation. Through engaging storytelling, practical strategies, and interactive experiences, I help audiences move from where they are to where they want to be."
+  },
+  "booking": {
+    "title": "Book Chase McTaggart",
+    "subtitle": "Let's create an unforgettable experience for your audience",
+    "info_title": "Event Information",
+    "info_content": [
+      "Chase is available for keynote presentations, workshops, and multi-day leadership intensives.",
+      "Standard keynote presentations are 45-75 minutes with Q&A.",
+      "Custom content developed for your specific audience and objectives.",
+      "Professional AV requirements and technical rider provided upon booking.",
+      "Travel coordination handled by our experienced team."
+    ],
+    "form_title": "Let's Start Planning Your Event"
+  },
+  "speaking_topics": [
+    {
+      "title": "Leadership in Crisis",
+      "description": "Navigate uncertainty and lead with confidence through challenging times."
+    },
+    {
+      "title": "Innovation Mindset",
+      "description": "Foster creativity and drive breakthrough thinking in your organization."
+    },
+    {
+      "title": "Peak Performance",
+      "description": "Unlock individual and team potential for sustained high performance."
+    },
+    {
+      "title": "Change Management",
+      "description": "Transform resistance into resilience and guide successful organizational change."
+    }
+  ],
+  "footer": {
+    "text": "© 2025 Chase McTaggart. All rights reserved. | Professional Speaker & Leadership Expert"
+  }
+}
