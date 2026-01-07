@@ -1,0 +1,11 @@
+{
+  "title": "Deep Learning Detection of Pneumonia",
+  "subtitle": "Medical imaging & deep learning classification",
+  "previewImage": "pneumonia-datasetexample.webp",
+  "images": [
+    "pneumonia-architecture.webp",
+    "pneumonia-ROC.webp",
+    "pneumonia-datasetexample.webp",
+    "pneumonia-pipeline.webp"
+  ]
+}

@@ -1,0 +1,17 @@
+Deep Learning Detection of Pneumonia
+
+A deep learning system for automated classification of pediatric chest X-rays into normal, bacterial pneumonia, and viral pneumonia categories. The project addresses the clinical need for rapid, scalable screening tools in resource-constrained settings by leveraging transfer learning on EfficientNetB0, handling class imbalance, and applying extensive preprocessing and augmentation. The system achieved strong discriminative performance (macro AUC ≈ 0.95) and demonstrates the feasibility of AI-assisted radiology triage and decision support.
+
+Key Components:
+- Curation and preprocessing of a large public pediatric chest X-ray dataset
+- Handling of severe class imbalance using inverse-frequency class weighting
+- Transfer learning using EfficientNetB0 pretrained on ImageNet
+- Custom multi-layer classification head with regularization (batch norm + dropout)
+- Fine-tuning of upper network layers for domain adaptation
+- Data augmentation to improve generalization
+- Training control via early stopping, learning rate scheduling, and checkpointing
+- Evaluation using accuracy, precision/recall/F1, ROC curves, and AUC metrics
+- Error analysis via confusion matrices and class-wise performance inspection
+
+Technologies / Methods:
+TensorFlow, Keras, Python, EfficientNetB0, transfer learning, convolutional neural networks, medical image analysis, class imbalance handling, data augmentation, ROC/AUC analysis, confusion matrices, Google Colab GPU, Adam optimizer, Grad-CAM (proposed), Kaggle dataset

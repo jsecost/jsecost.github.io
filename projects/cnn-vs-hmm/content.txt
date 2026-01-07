@@ -1,0 +1,15 @@
+CNNs vs. HMMs for Protein Domain Detection
+
+A computational biology and machine learning project investigating whether convolutional neural networks can be used as a faster alternative to Hidden Markov Models (HMMs) for identifying functional protein domains in amino acid sequences. The project reframed protein domain detection as a one-dimensional object detection problem, adapting techniques from computer vision to biological sequence data. The work emphasized algorithmic design, data generation, representation learning, and critical evaluation of model limitations.
+
+Key Components:
+- Reframing protein domain recognition as a 1D object detection problem
+- Use of HMMER to generate high-quality training labels from biological databases
+- Identification of conserved motif “keypoints” within protein domains
+- Construction of Gaussian-splatted target vectors inspired by object detection methods
+- Training and evaluation of 1D CNN architectures for domain localization
+- Comparison of CNN performance against HMM-based approaches
+- Analysis of failure modes due to biological sequence variabilit
+
+Technologies / Methods:
+Convolutional neural networks (1D CNNs), PyTorch, HMMER, PyHMMER, protein sequence analysis, PFAM and PANTHER databases, one-hot and integer sequence encodings, stochastic training, focal loss, Gaussian target splatting, sequence alignment, and quantitative model evaluation.

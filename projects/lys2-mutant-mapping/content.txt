@@ -1,0 +1,14 @@
+Yeast Mutant Mapping via Marker Rescue
+
+A multi-week wet-lab molecular biology project to localize a mutation in the LYS2 gene of yeast using plasmid isolation, restriction enzyme analysis, lithium acetate transformation, and selective marker rescue. The project emphasized experimental design, quantitative DNA analysis, biological interpretation, and troubleshooting real experimental failure modes such as contamination and reversion.
+
+Key Components:
+- Plasmid isolation and quality control (Qiagen MidiPrep, NanoDrop, gel electrophoresis)
+- Restriction enzyme digestion (BamHI) and fragment sizing via ladder regression
+- Yeast transformation using lithium acetate protocol
+- Selective and phenotypic plating to distinguish transformation, complementation, and reversion
+- Detection and interpretation of contamination and experimental artifacts
+- Quantitative calculation of transformation efficiency and reversion frequency
+
+Technologies / Methods:
+Molecular cloning, agarose gel electrophoresis, NanoDrop UV spectrophotometry, restriction enzyme digestion, yeast transformation (LiAc), selective media plating, replica plating, experimental controls, quantitative biological analysis

@@ -1,0 +1,17 @@
+Meta-Path Based Cell Phenotyping on scRNA-seq Data
+
+A graph-based machine learning approach for cell phenotyping that integrates both spatial proximity and molecular similarity in single-cell RNA sequencing data. The project introduces a heterogeneous graph formulation and interpretable meta-paths to capture biologically meaningful relationships between cells. By composing edge types into meta-path-based graphs and applying graph neural networks and embedding methods, the approach enables more robust cell classification than spatial-only methods and improves interpretability of learned relationships.
+
+Key Components:
+- Construction of heterogeneous graphs combining spatial and molecular relationships
+- Definition of interpretable meta-paths (spatial→molecular, molecular→spatial, etc.)
+- Composition of adjacency matrices via matrix multiplication
+- Flattening heterogeneous graphs into meta-path-based homogeneous graphs
+- Exploration of distance-based and k-nearest neighbor spatial graph construction
+- Use of kernel similarity functions for molecular graph construction
+- Support for both node-level and whole-graph learning tasks
+- Application of graph neural networks and graph embedding methods
+- Attention mechanisms to weight different relational patterns
+
+Technologies / Methods:
+Graph neural networks, heterogeneous graphs, meta-paths, scRNA-seq analysis, spatial transcriptomics, cosine similarity, k-nearest neighbors, kernel methods, matrix multiplication, HAN, MetaPath2Vec, HERec, graph embeddings, PyTorch Geometric (conceptual), attention mechanisms

@@ -1,0 +1,15 @@
+Modeling and Simulating Cancer Dynamics with the Moran Model
+
+A computational biology project modeling tumor evolution as a stochastic process using the Moran birth–death model. The project simulated cancer progression, immune response, and therapeutic intervention across multiple spatial and network-based frameworks to study how mutation, fitness, and treatment timing influence tumor growth and resistance. The work emphasized stochastic modeling, biological realism, experimental parameterization from literature, and interpretation of emergent dynamics in complex biological systems.
+
+Key Components:
+- Implementation of the stochastic Moran birth–death process for tumor evolution
+- Modeling of healthy, cancerous, immune, and dead cell populations
+- Simulation of mutation-driven fitness advantages and resistant clone emergence
+- Spatial modeling using grid-based, complete graph, and constrained graph representations
+- Immune response triggered by local cancer density thresholds
+- Simulation of therapeutic strategies including standard, alternative, and adaptive treatments
+- Quantitative analysis of population dynamics across time and conditions
+
+Technologies / Methods:
+Stochastic processes, Moran model, computational simulation, Python-based modeling, grid and graph-based population modeling, parameterization from biological literature, probabilistic state transitions, treatment response modeling, data visualization, and quantitative biological analysis.

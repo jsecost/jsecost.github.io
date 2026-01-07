@@ -1,0 +1,9 @@
+{
+  "title": "Meta-Path Based Cell Phenotyping",
+  "subtitle": "Graph learning on single-cell RNA sequencing data",
+  "previewImage": "metapath-stellar-datasetgraph.webp",
+  "images": [
+    "metapath-dataset.webp",
+    "metapath-stellar-datasetgraph.webp"
+  ]
+}

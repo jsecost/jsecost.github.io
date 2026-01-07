@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Text Style Control Panel -->
+    <div class="style-control-panel">
+        <button id="textStyleToggle" class="style-control-btn" title="Toggle outline/filled text">
+            <span class="toggle-icon">◐</span>
+        </button>
+        <button id="titleFontToggle" class="style-control-btn" title="Cycle title font">
+            <span class="toggle-icon">T</span>
+        </button>
+        <button id="bodyFontToggle" class="style-control-btn" title="Cycle body font">
+            <span class="toggle-icon">B</span>
+        </button>
+    </div>
+
+    <!-- Fixed Navbar -->
+    <nav class="navbar">
+        <a href="#projects" class="nav-link-left">Projects</a>
+        <div class="nav-name" id="navName"></div>
+        <a href="#contact" class="nav-link-right">Contacts</a>
+    </nav>
+
+    <!-- Marquee under navbar -->
+    <div class="marquee">
+        <div class="marquee-content" id="marqueeContent">
+        </div>
+    </div>
+
+    <!-- Main Content Column -->
+    <div class="main-column">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img id="heroImage" src="" alt="Profile" class="hero-image">
+            <h1 id="heroTitle" class="section-title"></h1>
+            <p id="heroDescription" class="hero-description"></p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">PROJECTS</h2>
+            <div id="projectsGrid" class="grid"></div>
+            <button id="expandProjects" class="expand-btn">View All Projects</button>
+        </section>
+
+        <!-- Extras Section -->
+        <section id="extras" class="section">
+            <h2 class="section-title">EXTRAS</h2>
+            <div id="extrasGrid" class="grid"></div>
+            <button id="expandExtras" class="expand-btn">View All Extras</button>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">CONTACT</h2>
+            <div id="contactContent" class="contact-content"></div>
+        </section>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <img src="Exit.svg" alt="Close" class="close">
+            </div>
+            <h3 id="modalSubtitle"></h3>
+            <div id="imageStackContainer" class="image-stack-container">
+                <button id="imageStackToggle" class="image-stack-toggle">
+                    <span class="toggle-text">Show Images</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div id="modalImages" class="modal-images"></div>
+            </div>
+            <div id="modalText" class="modal-text"></div>
+        </div>
+    </div>
+
+    <!-- Image Expansion Overlay -->
+    <div id="imageExpansionOverlay" class="image-expansion-overlay">
+        <div class="expanded-image-container">
+            <img src="Exit.svg" alt="Close" class="expansion-close">
+            <img id="expandedImage" class="expanded-image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

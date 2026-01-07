@@ -1,0 +1,9 @@
+{
+  "projects": [
+    "lys2-mutant-mapping",
+    "Moran-Model-Simulation",
+    "cnn-vs-hmm",
+    "cnn-pneumonia",
+    "graph-metapath-tissue"
+  ]
+}

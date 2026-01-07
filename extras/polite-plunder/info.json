@@ -1,0 +1,10 @@
+{
+  "title": "Modeling and Simulating Cancer Dynamics with the Moran Model",
+  "subtitle": "Stochastic computational biology simulation",
+  "previewImage": "moran-preview.jpg",
+  "images": [
+    "moran-grid.jpg",
+    "moran-graph.jpg",
+    "moran-treatment.jpg"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "JOHN COST",
+  "heroImage": "hero.webp",
+  "heroTitle": "FULL STACK DEVELOPER",
+  "heroDescription": "I'm a computational biology and machine learning engineer with experience building end-to-end systems for scientific data — spanning computer vision, graph learning, and full-stack software.\n\nI graduated from Carnegie Mellon University with a B.A. in Biology and a minor in Computational Biology, with coursework in algorithms, systems, machine learning, and graphs, but also in laboratory chemistry and biology. My research work includes designing scalable CV pipelines for microscopy (object detection, tracking, motion analysis, and reporting across 1000+ samples) and graph-based models for cell phenotyping using heterogeneous similarity structures.\n\nI focus on building reproducible, interpretable, and scalable pipelines. I love going from rom raw experimental data to usable outputs. And I love designing software that integrates cleanly into actual operational workflows.",
+  "marquee": " // NOW SEEKING FULLTIME ROLES //",
+  "resumeFile": "resume.pdf",
+  "showExtras": false,
+  "contact": {
+    "email": "john s cost at gmail dot com",
+    "github": "github.com/jsecost",
+    "linkedin": "linkedin.com/in/johncost"
+  }
+}
