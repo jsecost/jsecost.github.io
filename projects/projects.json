@@ -1,5 +1,6 @@
 {
   "projects": [
+    "cv-cell-tool",
     "lys2-mutant-mapping",
     "Moran-Model-Simulation",
     "cnn-vs-hmm",

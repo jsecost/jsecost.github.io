@@ -1,0 +1,9 @@
+{
+  "title": "Software Tool: Cell Analysis in Microscopy Images",
+  "subtitle": "CV pipeline replacing manual quantification in a research lab setting",
+  "previewImage": "pipeline.webp",
+  "images": [
+    "microscopy.webp",
+    "pipeline.webp"
+  ]
+}
