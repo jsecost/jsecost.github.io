@@ -1,8 +1,10 @@
 Automated Cell Quantification and Spatial Analysis in Microscopy Images
 
-An applied computer vision pipeline developed to replace manual cell counting and measurement in an academic lab setting. The system automates cell detection, size proxy estimation, and spatial dispersion analysis across large batches of microscopy images, enabling scalable and consistent quantitative readouts where cells were previously counted by hand. The project emphasizes end-to-end tooling, practical validation, and quality control rather than novel segmentation methodology.
+An applied computer vision pipeline developed to replace manual cell counting and measurement in an academic lab setting. This tool reduced task time 50x (lower bound), automating analysis of thousands of cells in hundreds of images.
 
-The approach uses deep learning–based object detection with post-processing to extract per-cell and per-well metrics, producing structured outputs suitable for downstream statistical analysis and experimental comparison.
+The system automates cell detection, size proxy estimation, and spatial dispersion analysis across large batches of microscopy images, enabling scalable and consistent quantitative readouts where cells were previously counted by hand. The project emphasized end-to-end tooling, practicality, and speed to production, rather than novel segmentation methodology.
+
+The approach used a deep learning–based object detection with post-processing to extract per-cell and per-well metrics, producing structured outputs suitable for downstream analysis.
 
 Note: Bounding boxes were used as computationally efficient size proxies rather than exact cell boundaries. The system was designed for throughput, consistency, and relative comparison across conditions rather than pixel-perfect morphology.
 
