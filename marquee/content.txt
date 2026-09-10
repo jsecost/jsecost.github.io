@@ -1,7 +1,7 @@
 But I’m always interested in hearing about compelling roles:
 
 My strongest fit is at the intersection of software engineering, data, and life sciences:
-- Software Engineering (junior / entry-level)
+- Software Engineering
 - Bioinformatics & Computational Biology
 - Laboratory automation, data, or tooling
 - Scientific or ML-adjacent engineering roles
@@ -13,7 +13,8 @@ I bring:
 - A strong foundation in Python and data analysis
 - Experience across wet-lab biology, computational biology, and software projects
 - The ability to move comfortably between scientific, technical, and operational contexts
+- Fullstack Development experience with Postgres, SQL, React, Typescript, Go, Rust, K8s
 
 I value high ownership, fast learning, and building things that are scalable, reliable, and useful.
 
-If you’re hiring for any junior or entry-level role where these skills would be helpful, I’d be glad to connect.
+If your company has an awesome role where these strengths are valued, I’d be glad to connect.
